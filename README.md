@@ -62,6 +62,16 @@ backend: 'springboot' // Spring Boot en http://localhost:8080/api
 
 No se modifican casos de uso ni páginas. Este backend permite CORS de desarrollo desde `http://localhost:4200`.
 
+### Validación de la integración
+
+Se verificó que Angular compila al seleccionar `backend: 'node'` y `backend: 'springboot'`, manteniendo los mismos casos de uso y páginas para los tres módulos. Los contratos comprobados son:
+
+- Usuarios: `id`, `name`, `lastName`, `age`, `email`, `engineering`.
+- Productos: `id`, `name`, `category`, `price`.
+- Categorías: `id`, `name`, `description`.
+
+La documentación Compodoc del proyecto Angular se regeneró y su cobertura documental es 100%. La documentación de este backend se consulta mediante Swagger UI y el documento OpenAPI indicados arriba.
+
 ## Arquitectura
 
 ```text
