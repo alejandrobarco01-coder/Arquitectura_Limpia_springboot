@@ -26,6 +26,14 @@ class ApiContractTest {
                 .andExpect(jsonPath("$[0].description").value("Carnes y proteínas"));
     }
 
+    @Test void apiRootIsDiscoverable() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.message").value("Clean Architecture Spring Boot API"))
+                .andExpect(jsonPath("$.endpoints.categories").value("/api/categories"))
+                .andExpect(jsonPath("$.swaggerUi").value("/api/swagger-ui.html"));
+    }
+
     @Test void usersAndProductsKeepAngularProperties() throws Exception {
         mockMvc.perform(get("/users/2"))
                 .andExpect(status().isOk())

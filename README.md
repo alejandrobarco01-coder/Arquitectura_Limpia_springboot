@@ -33,6 +33,8 @@ La aplicación inicia en `http://localhost:8080` con el context path `/api`, def
 | GET | `/api/products/{countProducts}` | Lista de productos con `id`, `name`, `category`, `price` |
 | GET | `/api/categories` | Catálogo fijo con `id`, `name`, `description` |
 
+`GET /api/` responde HTTP 200 con un índice JSON de estos recursos y los enlaces de documentación.
+
 `countUsers` y `countProducts` deben ser enteros entre 1 y 1000; los valores inválidos responden HTTP 400. Las consultas correctas responden HTTP 200 y JSON.
 
 Ejemplo de categoría:
